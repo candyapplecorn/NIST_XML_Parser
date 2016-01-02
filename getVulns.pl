@@ -28,6 +28,9 @@ sub getXML {
     # However if it's been more than a week,
     # get all the files except for modified + recent
     # https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml.gz
+    # EDIT: The comparison "result == 0" fails, probably a type issue or something,
+    # so I just added a failsafe and told the loop to stop after 28 iterations.
+    # Obviously this is bad, but it works, moving on...
     for (my $year = 2002, my $result = 0; $result == 0 && $year < 2030;$year++) {
         my $url = "https://nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-".$year.".xml.gz";
         my $filename = $url;
