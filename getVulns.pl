@@ -11,6 +11,12 @@ my $outfile = 'payload.txt',
 my $dif,
 my $week = 7 * 24 * 60 * 60;
 
+# EDIT: Turns out modified.xml changes something like
+# once every two hours, so I simply changed this program
+# to always get all xml feeds, rather than modified.
+# If I were to change this, I'd change "if (dif < week) { get modified }"
+# to "if (dif < 2 hours) { get modified }"
+# But I'm lazy so I just hard coded dif to always be longer than a week.
 sub getXML {
     # If it's been less than one week,
     # just get the modified file
