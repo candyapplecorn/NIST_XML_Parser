@@ -65,6 +65,11 @@ sub getFile {
     open(my $fh, '>', $bpath . $filename) or die "Could not open file $filename $!";
     print $fh $res->decoded_content;
     close $fh;
+    # I tried installing a perl module for unzipping archive files
+    # But I couldn't get it to work after an hour of fiddling.
+    # Hey, the shell sure is useful! A better solution would keep
+    # this entire program inside perl, making this script more
+    # transportable to other operating systems. oh well
     system ("find $bpath -name $unzippedName -exec rm {} \\;");
     system ("gunzip " . $bpath . $filename);
     return 0;
