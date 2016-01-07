@@ -1,5 +1,6 @@
-# NIST_XML_Parser
-Program which makes a double column list of of NIST vulnerabilities
+# NIST_XML_Parser  
+Program which makes a double column list of of NIST vulnerabilities  
+**Video of program in action:**  [https://youtu.be/3g8ZP9Cxk4w]
 
 Someone wanted a two column list made from the XML files on the NIST vulnerability page, in order to easily plug the data into Excel.
 First column is the CVE identifier, second column is the score. 
